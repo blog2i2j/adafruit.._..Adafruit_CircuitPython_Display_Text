@@ -11,10 +11,12 @@ display = supervisor.runtime.display
 text = "Hello world CircuitPython Labels are awesome!"
 
 accent_palette = displayio.Palette(7)
+accent_palette[1] = 0xAAAAAA
 accent_palette[3] = 0x3774A7
 accent_palette[4] = 0xFFD748
 accent_palette[5] = 0xFFFFFF
 accent_palette[6] = 0x652F8F
+accent_palette.make_transparent(0)
 
 scrolling_label = Label(
     terminalio.FONT,
@@ -22,7 +24,6 @@ scrolling_label = Label(
     max_characters=20,
     animate_time=0.3,
     color_palette=accent_palette,
-    color=0xAAAAAA,
     scale=2,
 )
 

@@ -110,9 +110,11 @@ class Label(LabelBase):
     :param int outline_size: The size in pixels of the outline stroke.
       Defaults to 1 pixel.
     :param Optional[displayio.Palette] color_palette: The palette to use for the Label.
-      Indexes 0, 1, and 2 will be filled with background, foreground, and outline colors
-      automatically. Indexes 3 and above can be used for accent colors.
-    :param Optional[int] max_characters: The number of characters that sets the fixed-width.
+      Indexes 0, 1, and 2 will be used for background, foreground, and outline colors
+      respectively. Indexes 3 and above can be used for accent colors. ``color``,
+      ``background_color``, and ``outline_color`` arguments will be ignored if
+      ``color_palette`` is used.
+    :param Optional[int] ax_characters: The number of characters that sets the fixed-width.
       Default is None for unlimited width and no scrolling
 
     :param float animate_time: The number of seconds in between scrolling animation
@@ -173,8 +175,6 @@ class Label(LabelBase):
                     "using accents."
                 )
             self._palette = color_palette
-            self.color = self._color
-            self.background_color = self._background_color
         else:
             _background_color = self._palette[0]
             _foreground_color = self._palette[1]
