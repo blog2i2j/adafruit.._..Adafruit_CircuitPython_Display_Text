@@ -490,9 +490,7 @@ class Label(LabelBase):
             char = text[char_idx]
             if char == "\n":  # newline
                 xposition = x_start  # reset to left column
-                yposition = yposition + self._line_spacing_ypixels(
-                    font, line_spacing
-                )  # Add a newline
+                yposition += self._line_spacing_ypixels(font, line_spacing)  # Add a newline
 
             else:
                 my_glyph = font.get_glyph(ord(char))
@@ -641,7 +639,7 @@ class Label(LabelBase):
                     if accented and accent_type == "outline":
                         xposition = xposition + my_glyph.shift_x + self._outline_size
                     else:
-                        xposition = xposition + my_glyph.shift_x
+                        xposition += my_glyph.shift_x
 
         self._add_outline(self.bitmap)
         # bounding_box

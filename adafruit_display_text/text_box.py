@@ -166,9 +166,7 @@ class TextBox(bitmap_label.Label):
                     x_start = original_xposition + unused_space - self._padding_right
                 xposition = x_start
 
-                yposition = yposition + self._line_spacing_ypixels(
-                    font, line_spacing
-                )  # Add a newline
+                yposition += self._line_spacing_ypixels(font, line_spacing)  # Add a newline
 
             else:
                 my_glyph = font.get_glyph(ord(char))
@@ -226,7 +224,7 @@ class TextBox(bitmap_label.Label):
                         # ignore index out of bounds error
                         break
 
-                    xposition = xposition + my_glyph.shift_x
+                    xposition += my_glyph.shift_x
 
         # bounding_box
         return left, top, right - left, bottom - top

@@ -78,8 +78,8 @@ time.sleep(TIME_PAUSE)
 
 # Testing a and y getter and setter
 text_area.text = "Testing Changing Position"
-text_middle.x = text_middle.x - 50
-text_middle.y = text_middle.y - 50
+text_middle.x -= 50
+text_middle.y -= 50
 display.root_group = main_group
 time.sleep(TIME_PAUSE)
 
@@ -394,8 +394,8 @@ time.sleep(TIME_PAUSE)
 
 # Testing a and y getter and setter
 text_area.text = "Testing Changing Position"
-text_middle.x = text_middle.x - 50
-text_middle.y = text_middle.y - 50
+text_middle.x -= 50
+text_middle.y -= 50
 display.root_group = main_group
 time.sleep(TIME_PAUSE)
 

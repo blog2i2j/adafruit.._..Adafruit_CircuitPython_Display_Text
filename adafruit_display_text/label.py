@@ -347,18 +347,18 @@ class Label(LabelBase):
                 tilegrid_count += 1
 
             if self._label_direction == "RTL":
-                x = x - glyph.shift_x
+                x -= glyph.shift_x
             if self._label_direction == "TTB":
                 if glyph.height < 2:
-                    y = y + glyph.shift_x
+                    y += glyph.shift_x
                 else:
                     y = y + glyph.height + 1
             if self._label_direction == "UPR":
-                y = y - glyph.shift_x
+                y -= glyph.shift_x
             if self._label_direction == "DWR":
-                y = y + glyph.shift_x
+                y += glyph.shift_x
             if self._label_direction == "LTR":
-                x = x + glyph.shift_x
+                x += glyph.shift_x
 
             i += 1
 
